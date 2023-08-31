@@ -15,14 +15,16 @@
  *Пример*:
  http://localhost:8080/activeUserSegments/2
  *Ответ*:
-```[
+```
+[
     {
         "Slug": "AVITO_VOICE_MESSAGES"
     },
     {
         "Slug": "AVITO_PERFORMANCE_VAS"
     }
-]```
+] 
+```
 
 
  - /segment/:slug
@@ -38,7 +40,8 @@
  *Пример*:
  http://localhost:8080/segment
  *Ответ*:
-``` ["AVITO_VOICE_MESSAGES",
+``` 
+["AVITO_VOICE_MESSAGES",
     "AVITO_PERFORMANCE_VAS",
     "AVITO_DISCOUNT_30"]
 ``` 
@@ -63,7 +66,8 @@
  Пример:
  http://localhost:8080/downloadOperations/2023/08
  *Ответ*:
- ```UserID,SegmentSlug,Operation,Data
+ ```
+ UserID,SegmentSlug,Operation,Data
 2,AVITO_VOICE_MESSAGES,Add,2023-08-31 19:56:32.300547 +0000 UTC
 2,AVITO_PERFORMANCE_VAS,Add,2023-08-31 21:09:05.259765 +0000 UTC
 2,AVITO_VOICE_MESSAGES,Delete,2023-08-31 21:09:09.985165 +0000 UTC
@@ -77,4 +81,5 @@
 2,AVITO_VOICE_MESSAGES,Add,2023-08-31 21:11:38.670672 +0000 UTC
 2,AVITO_VOICE_MESSAGES,Delete,2023-08-31 21:11:38.709273 +0000 UTC
 2,AVITO_VOICE_MESSAGES,Add,2023-08-31 21:14:33.222133 +0000 UTC
-2,AVITO_VOICE_MESSAGES,Delete,2023-08-31 21:14:33.272737 +0000 UTC```
+2,AVITO_VOICE_MESSAGES,Delete,2023-08-31 21:14:33.272737 +0000 UTC
+```
