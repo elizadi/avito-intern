@@ -51,3 +51,12 @@ func (s *Repository) DeleteSegment(slug string) error {
 	fmt.Printf("%s successfully deleted\n", slug)
 	return nil
 }
+
+func (s *Repository) GetSegments() ([]string, error) {
+	var res []string
+	err := s.db.Model(&Segment{}).Find(&res).Error
+	if err != nil {
+		return nil, err
+	}
+	return res, err
+}

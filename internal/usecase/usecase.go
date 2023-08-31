@@ -38,6 +38,14 @@ func (u *usecase) DeleteSegment(slug string) error {
 	return nil
 }
 
+func (u *usecase) GetSegments() ([]string, error) {
+	segments, err := u.repoSegment.GetSegments()
+	if err != nil {
+		return nil, err
+	}
+	return segments, nil
+}
+
 func (u *usecase) AddUserToSegment(slugsAdd []string, slugsDelete []string, id uint64) error {
 	if len(slugsAdd) == 0 && len(slugsDelete) == 0 {
 		return domain.ErrEmptyParameter

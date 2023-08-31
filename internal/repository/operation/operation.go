@@ -34,15 +34,19 @@ func New(db *gorm.DB) (*Repository, error) {
 
 func (r *Repository) CreateOperationBatch(slugsAdd, slugsDelete []string, id uint64) error {
 	var operations = createBatch(slugsAdd, id, "Add")
-	tx := r.db.Create(&operations)
-	if tx.Error != nil {
-		return tx.Error
+	if len(operations) != 0 {
+		tx := r.db.Create(&operations)
+		if tx.Error != nil {
+			return tx.Error
+		}
 	}
-
+	
 	operations = createBatch(slugsDelete, id, "Delete")
-	tx = r.db.Create(&operations)
-	if tx.Error != nil {
-		return tx.Error
+	if len(operations) != 0 {
+		tx := r.db.Create(&operations)
+		if tx.Error != nil {
+			return tx.Error
+		}
 	}
 
 	return nil

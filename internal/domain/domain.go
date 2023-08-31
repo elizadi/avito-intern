@@ -3,6 +3,7 @@ package domain
 type UseCase interface {
 	CreateSegment(slug string) error
 	DeleteSegment(slug string) error
+	GetSegments() ([]string, error)
 	AddUserToSegment(slugsAdd []string, slugsDelete []string, id uint64) error
 	GetActiveUserSegments(id uint64) ([]Segment, error)
 	GetOperations(year, month int) ([]Operation, error)
@@ -16,6 +17,7 @@ type OperationRepository interface {
 type SegmentRepository interface {
 	CreateSegment(slug string) error
 	DeleteSegment(slug string) error
+	GetSegments() ([]string, error)
 }
 
 type UserSegmentRepository interface {
