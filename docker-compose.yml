@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "avito"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "123456789Lis"
+    ports:
+      - "5433:5432"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres
+    depends_on: 
+      - postgres
+    links: 
+      - postgres
+    networks:
+      - default
